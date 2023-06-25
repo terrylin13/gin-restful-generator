@@ -35,9 +35,6 @@ func main() {
 		api.WebSocketHandler(c.Writer, c.Request)
 	})
 
-	// url := ginSwagger.URL("http://localhost:8080/swagger/doc.json")
-	// e.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
-
 	e.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, ginSwagger.URL("./docs/swagger/doc.json"))) // Swagger Doc URL
 	g := e.Group("/api")
 	{
