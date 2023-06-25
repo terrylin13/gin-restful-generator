@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"github.com/terrylin13/gin-restful-generator/example/internal/model"
+	"github.com/terrylin13/gin-restful-generator/internal/example/internal/model"
 )
 
 // type UserRepository interface {

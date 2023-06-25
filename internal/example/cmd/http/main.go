@@ -2,11 +2,11 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/terrylin13/gin-restful-generator/example/internal/api"
-	"github.com/terrylin13/gin-restful-generator/example/internal/config"
-	"github.com/terrylin13/gin-restful-generator/example/internal/model"
-	"github.com/terrylin13/gin-restful-generator/example/internal/repository"
-	"github.com/terrylin13/gin-restful-generator/example/internal/service"
+	"github.com/terrylin13/gin-restful-generator/internal/example/internal/api"
+	"github.com/terrylin13/gin-restful-generator/internal/example/internal/config"
+	"github.com/terrylin13/gin-restful-generator/internal/example/internal/model"
+	"github.com/terrylin13/gin-restful-generator/internal/example/internal/repository"
+	"github.com/terrylin13/gin-restful-generator/internal/example/internal/service"
 )
 
 func main() {

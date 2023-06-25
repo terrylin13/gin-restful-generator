@@ -4,8 +4,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/terrylin13/gin-restful-generator/example/internal/model"
-	"github.com/terrylin13/gin-restful-generator/example/internal/service"
+	"github.com/terrylin13/gin-restful-generator/internal/example/internal/model"
+	"github.com/terrylin13/gin-restful-generator/internal/example/internal/service"
 )
 
 func CreateUser(userService *service.UserService) gin.HandlerFunc {

@@ -1,8 +1,8 @@
 package repository
 
 import (
-	"github.com/terrylin13/gin-restful-generator/example/internal/config"
-	"github.com/terrylin13/gin-restful-generator/example/internal/model"
+	"github.com/terrylin13/gin-restful-generator/internal/example/internal/config"
+	"github.com/terrylin13/gin-restful-generator/internal/example/internal/model"
 )
 
 type GormUserRepository struct {
