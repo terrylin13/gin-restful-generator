@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package user;
+
+// The user service definition.
+service UserService {
+  // Returns a User by ID
+  rpc GetUser (GetUserRequest) returns (User) {}
+}
+
+// The request message for getting a user.
+message GetUserRequest {
+  string id = 1;
+}
+
+// The User message type.
+message User {
+  string id = 1;
+  string name = 2;
+}

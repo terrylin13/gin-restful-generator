@@ -23,6 +23,10 @@ func main() {
 
 	e := gin.Default()
 
+	e.GET("/ws", func(c *gin.Context) {
+		api.WebSocketHandler(c.Writer, c.Request)
+	})
+
 	g := e.Group("/api")
 	{
 		g.POST("/user", api.CreateUser(userService))
