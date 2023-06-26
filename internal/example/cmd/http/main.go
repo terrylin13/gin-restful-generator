@@ -6,6 +6,7 @@ import (
 	"github.com/terrylin13/gin-restful-generator/internal/example/internal/api"
 	"github.com/terrylin13/gin-restful-generator/internal/example/internal/config"
 	"github.com/terrylin13/gin-restful-generator/internal/example/internal/model"
+	"github.com/terrylin13/gin-restful-generator/internal/example/internal/ws"
 )
 
 // @title Gin RESTful API
@@ -22,12 +23,12 @@ func main() {
 
 	model.Migrate(db)
 
-	e := gin.Default()
+	e := gin.New()
 
 	api.Register(e)
 
 	e.GET("/ws", func(c *gin.Context) {
-		api.WebSocketHandler(c.Writer, c.Request)
+		ws.WebSocketHandler(c.Writer, c.Request)
 	})
 
 	// e.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, ginSwagger.URL("./docs/swagger/doc.json"))) // Swagger Doc URL
