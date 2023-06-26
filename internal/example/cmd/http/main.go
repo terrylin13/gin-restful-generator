@@ -2,14 +2,10 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	swaggerFiles "github.com/swaggo/files"
-	ginSwagger "github.com/swaggo/gin-swagger"
-	_ "github.com/terrylin13/gin-restful-generator/internal/example/docs/swagger" // import Swagger docs generator
+	// _ "github.com/terrylin13/gin-restful-generator/internal/example/docs/swagger" // import Swagger docs generator
 	"github.com/terrylin13/gin-restful-generator/internal/example/internal/api"
 	"github.com/terrylin13/gin-restful-generator/internal/example/internal/config"
 	"github.com/terrylin13/gin-restful-generator/internal/example/internal/model"
-	"github.com/terrylin13/gin-restful-generator/internal/example/internal/repository"
-	"github.com/terrylin13/gin-restful-generator/internal/example/internal/service"
 )
 
 // @title Gin RESTful API
@@ -26,22 +22,15 @@ func main() {
 
 	model.Migrate(db)
 
-	userRepo := &repository.GormUserRepository{}
-	userService := service.NewUserService(userRepo)
-
 	e := gin.Default()
+
+	api.Register(e)
 
 	e.GET("/ws", func(c *gin.Context) {
 		api.WebSocketHandler(c.Writer, c.Request)
 	})
 
-	e.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, ginSwagger.URL("./docs/swagger/doc.json"))) // Swagger Doc URL
-	g := e.Group("/api")
-	{
-
-		g.POST("/user", api.CreateUser(userService))
-		g.GET("/user/:id", api.GetUser(userService))
-	}
+	// e.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, ginSwagger.URL("./docs/swagger/doc.json"))) // Swagger Doc URL
 
 	e.Run(":8080")
 
