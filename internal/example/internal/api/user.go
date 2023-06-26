@@ -8,7 +8,6 @@ import (
 	"github.com/terrylin13/gin-restful-generator/internal/example/internal/service"
 )
 
-// @BasePath /api
 // PingExample godoc
 // @Summary 创建用户
 // @Description 创建新用户
@@ -31,7 +30,6 @@ func CreateUser(userService *service.UserService) gin.HandlerFunc {
 	}
 }
 
-// @BasePath /api
 // PingExample godoc
 // @Summary 根据ID获取用户
 // @Description 根据用户ID获取用户信息
