@@ -7,7 +7,6 @@ require (
 	github.com/gin-gonic/gin v1.9.1
 	github.com/gorilla/websocket v1.5.0
 	github.com/graphql-go/graphql v0.8.1
-	github.com/graphql-go/handler v0.2.3
 	github.com/stretchr/testify v1.8.4
 	github.com/swaggo/swag v1.16.1
 	gorm.io/driver/mysql v1.5.1
